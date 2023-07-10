@@ -1,0 +1,33 @@
+{
+    "students": [
+      {
+        "name": "John Doe",
+        "roll": 1,
+        "marks": {
+          "math": 95,
+          "science": 85,
+          "english": 90
+        },
+        "address": {
+          "street": "123 Main St",
+          "city": "New York",
+          "country": "USA"
+        }
+      },
+      {
+        "name": "Jane Smith",
+        "roll": 2,
+        "marks": {
+          "math": 80,
+          "science": 92,
+          "english": 88
+        },
+        "address": {
+          "street": "456 Elm St",
+          "city": "London",
+          "country": "UK"
+        }
+      }
+    ]
+  }
+  
