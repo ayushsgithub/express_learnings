@@ -3,18 +3,21 @@ const app = express()
 const port = 3000
 const data = require("./data.json")
 app.set("view engine", "ejs")
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
 const userRouter = require("./routes/users")
 const postRouter = require("./routes/post")
 
 app.use(logger)
+
 app.use("/users", userRouter)
 app.use("/posts", postRouter)
+app.use(express.static("public"))
 
-
-app.get('/', (req, res) => {
-  res.render("index", {text: "Ayush's"})
-})
+// app.get('/', (req, res) => {
+//   res.render("index", {text: "Ayush's"})
+// })
 
 // To download files , the actual file has been deleted.
 // app.get('/download', (req, res) => {
@@ -33,8 +36,6 @@ function logger(req, res, next) {
   console.log(req.originalUrl)
   next()
 }
-
-
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
